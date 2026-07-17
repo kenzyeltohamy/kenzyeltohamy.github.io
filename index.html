@@ -162,6 +162,14 @@
     .hero>*{opacity:1!important;animation:none!important;transform:none!important}
   }
 </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C11844RMM1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-C11844RMM1');
+</script>
 </head>
 <body>
 
@@ -441,6 +449,7 @@ const modalBox=document.getElementById("modalBox");
 let g={imgs:[],i:0,tag:""};
 function openModal(id){
   const p=ALL[id];
+  if(window.gtag) gtag("event","project_open",{project_name:p.tag, project_title:p.title});
   g={imgs:p.images||[],i:0,tag:p.tag};
   const hasG=g.imgs.length>0;
   modalBox.innerHTML=`
